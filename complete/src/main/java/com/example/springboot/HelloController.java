@@ -27,7 +27,9 @@ public class HelloController {
         //Contact create object
         System.out.println(contact.getEmail());
         System.out.println(contact.getMessage());
-        return "contact";
+        model.addAttribute("email",contact.getEmail());
+        model.addAttribute("email",contact.getMessage());
+        return "fragments/contactResponse :: #contactSuccess";
     }
 
     @GetMapping("/about")
