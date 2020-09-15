@@ -28,7 +28,7 @@ public class HelloController {
         System.out.println(contact.getEmail());
         System.out.println(contact.getMessage());
         model.addAttribute("email",contact.getEmail());
-        model.addAttribute("email",contact.getMessage());
+        model.addAttribute("message",contact.getMessage());
         return "fragments/contactResponse :: #contactSuccess";
     }
 
