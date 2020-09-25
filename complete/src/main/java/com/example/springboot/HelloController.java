@@ -12,7 +12,7 @@ import org.springframework.ui.Model;
 public class HelloController {
 
     @GetMapping("/")
-	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+	public String greeting(@RequestParam(name="name", required=false, defaultValue="Professor") String name, Model model) {
 		model.addAttribute("name", name);
 		return "greeting";
     }
@@ -48,8 +48,9 @@ public class HelloController {
     public String postBlog(Model model, @RequestBody Blog blog){
         //Contact create object
         System.out.println(blog.getInput());
+        model.addAttribute("input",blog.getInput());
 
-        return "blog";
+        return "fragments/blogPost :: #blogInput";
     }
 
 }
